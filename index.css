@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-dark-900: #04130e;
+    --brand-dark-800: #061a14;
+    --brand-dark-700: #0b251d;
+    --brand-dark-600: #103429;
+    --brand-emerald: #10b981;
+    --brand-gold: #eab308;
+    --brand-gold-light: #fef08a;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #061a14;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  /* Support for Arabic and RTL scripts */
+  [dir="rtl"] {
+    font-family: 'Readex Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom sleek scrollbar for chat history and message panel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* Markdown styling inside chat messages */
+.prose-zasa {
+  color: #f1f5f9;
+  line-height: 1.68;
+}
+
+.prose-zasa p {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose-zasa p:first-child {
+  margin-top: 0;
+}
+
+.prose-zasa p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-zasa ul, .prose-zasa ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-inline-start: 1.4em;
+}
+
+.prose-zasa li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose-zasa strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose-zasa code:not(pre code) {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  padding: 0.15em 0.35em;
+  border-radius: 0.25em;
+  font-size: 0.88em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.prose-zasa pre {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.prose-zasa blockquote {
+  border-inline-start: 3px solid #eab308;
+  padding-inline-start: 0.85em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+.prose-zasa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.9em;
+}
+
+.prose-zasa th, .prose-zasa td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5em 0.75em;
+  text-align: start;
+}
+
+.prose-zasa th {
+  background: rgba(16, 185, 129, 0.12);
+  color: #fef08a;
+  font-weight: 600;
+}
+
+/* Pulsing subtle glow for ZASA brand highlights */
+@keyframes goldPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
